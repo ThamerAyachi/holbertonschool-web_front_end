@@ -477,7 +477,7 @@ ul.row {
 }
 
 .section-body {
-  padding: 10rem 4rem;
+  padding: var(--section-body-padding);
 }
 
 .section-footer {
@@ -525,6 +525,10 @@ ul.row {
 .section-hero .section-category {
   color: var(--color-white);
   text-transform: uppercase;
+}
+
+.section-hero .section-body {
+  padding: 10rem 4rem;
 }
 
 /* Section Latest news ============================= */
