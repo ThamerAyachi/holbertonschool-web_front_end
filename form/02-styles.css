@@ -828,5 +828,5 @@ fieldset {
   flex-direction: column;
   justify-content: flex-start;
   border: 0;
-  padding: 0 0 2rem auto;
+  padding: 0 0 2rem;
 }
