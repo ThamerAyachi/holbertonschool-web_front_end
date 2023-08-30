@@ -9,37 +9,40 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
     <body>
-        <header>
-            <ul>
-                <li>
+        <header class="border-buttom p-2 m-3 bg-light mb-0">
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group mr-auto">
                     <a href="/">
                         <img src="https://via.placeholder.com/150x50" />
                     </a>
                 </li>
-                <li>
-                    <a href="#">Chemical elements</a>
+                <li class="list-group mr-1">
+                    <a href="#" class="btn btn-secondary mr-1 align-middle active">Chemical elements</a>
                 </li>
-                <li>
-                    <a href="#">Profile</a>
+                <li class="list-group">
+                    <a href="#" class="btn btn-secondary mr-1 align-middle">Profile</a>
                 </li>
             </ul>
         </header>
 
         <main>
-            <section>
-                <div role="alert">
-                    <h4>List of chemical elements</h4>
+            <section class="container mw-100">
+                <div role="alert" class="alert alert-info">
+                    <h4 class="alert-heading">List of chemical elements</h4>
                     <p>This is a list of the 5 first chemical elements which have been identified as of 2019.</p>
                     <hr>
                     <p>A popular visualization of all 118 elements is <a href="https://en.wikipedia.org/wiki/Periodic_table">the periodic table of the elements</a>.</p>
                 </div>
             </section>
 
-            <section>
-                <h1>Chemical elements <span>only 5</span></h1>
+            <section class="container mw-100">
+                <h1 class="mb-4 mt-5">
+                    Chemical elements 
+                    <span class="badge badge-info badge-pill">only 5</span>
+                </h1>
 
-                <div>
-                    <table>
+                <div class="container mw-100 p-0 overflow-x">
+                    <table class="table table-dark table-hover table-responsive-lg">
                         <thead>
                             <tr>
                                 <th scope="col">Atomic number</th>
@@ -53,7 +56,7 @@
                                 <th scope="col">Melting point</th>
                                 <th scope="col">Boiling point</th>
                                 <th scope="col">Specific heat capacity</th>
-                                <th scope="col">Electro­negativity</th>
+                                <th scope="col">Electro-negativity</th>
                                 <th scope="col">Abundance in Earth's crust</th>
                             </tr>
                         </thead>
@@ -85,7 +88,7 @@
                                 <td>—</td>
                                 <td>4.22</td>
                                 <td>5.193</td>
-                                <td>–</td>
+                                <td>-</td>
                                 <td>0.008</td>
                             </tr>
                             <tr>
