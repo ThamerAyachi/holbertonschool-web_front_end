@@ -30,20 +30,24 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
-    <div>
-      <h1>Bob Dylan</h1>
+  <body class="bg-dark">
+    <div class="container-lg p-3 bg-light">
+      <h1 class="my-4">Bob Dylan</h1>
 
-      <ul>
-        <li>
-          <a>Introduction</a>
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" role="tab" href="#tab1"
+            >Introduction</a
+          >
         </li>
-        <li>
-          <a>Discography</a>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" role="tab" href="#tab2"
+            >Discography</a
+          >
         </li>
       </ul>
-      <div>
-        <div>
+      <div class="tab-content bg-white p-3">
+        <div class="tab-pane fade show active" role="tabpanel" id="tab1">
           <p>
             Bob Dylan (born Robert Allen Zimmerman; May 24, 1941) is an American
             singer-songwriter, author, and visual artist who has been a major
@@ -60,11 +64,17 @@
           </p>
         </div>
 
-        <div>
-          <ul>
-            <li>
-              <a>Bob Dylan <em>(1962)</em></a>
-              <div>
+        <div class="tab-pane fade" role="tabpanel" id="tab2">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <a
+                type="button"
+                data-toggle="collapse"
+                data-target="#des1"
+                class="btn btn-link text-primary"
+                >Bob Dylan <em>(1962)</em></a
+              >
+              <div class="collapse" data-parent="#des1" id="des1">
                 <p>
                   Bob Dylan is the debut studio album by American
                   singer-songwriter Bob Dylan, released on March 19, 1962 by
@@ -76,9 +86,15 @@
               </div>
             </li>
 
-            <li>
-              <a>The Freewheelin' Bob Dylan <em>(1963)</em></a>
-              <div>
+            <li class="list-group-item">
+              <a
+                type="button"
+                data-toggle="collapse"
+                data-target="#des2"
+                class="btn btn-link text-primary"
+                >The Freewheelin' Bob Dylan <em>(1963)</em></a
+              >
+              <div class="collapse" data-parent="#des2" id="des2">
                 <p>
                   The Freewheelin' Bob Dylan is the second studio album by
                   American singer-songwriter Bob Dylan, released on May 27, 1963
@@ -99,9 +115,15 @@
               </div>
             </li>
 
-            <li>
-              <a>The Times They Are a-Changin' <em>(1964)</em></a>
-              <div>
+            <li class="list-group-item">
+              <a
+                type="button"
+                data-toggle="collapse"
+                data-target="#des3"
+                class="btn btn-link text-primary"
+                >The Times They Are a-Changin' <em>(1964)</em></a
+              >
+              <div class="collapse" data-parent="#des3" id="des3">
                 <p>
                   The Times They Are a-Changin' is the third studio album by
                   American singer-songwriter Bob Dylan, released on January 13,
@@ -118,9 +140,15 @@
               </div>
             </li>
 
-            <li>
-              <a>Another Side of Bob Dylan <em>(1964)</em></a>
-              <div>
+            <li class="list-group-item">
+              <a
+                type="button"
+                data-toggle="collapse"
+                data-target="#des4"
+                class="btn btn-link text-primary"
+                >Another Side of Bob Dylan <em>(1964)</em></a
+              >
+              <div class="collapse" data-parent="#des4" id="des4">
                 <p>
                   Another Side of Bob Dylan is the fourth studio album by
                   American singer and songwriter Bob Dylan, released on August
