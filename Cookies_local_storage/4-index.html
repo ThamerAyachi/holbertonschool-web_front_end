@@ -11,7 +11,7 @@
         <h2>Login to the website</h2>
         <input type="text" placeholder="Firstname" id="firstname" />
         <input type="email" placeholder="Email" id="email" />
-        <button onclick="setCookies()">Log me in</button>
+        <button onclick="setCookiesAndShowWelcomeMessage()">Log me in</button>
       </div>
 
       <div id="text"></div>
@@ -20,6 +20,8 @@
         <button onclick="showCookies()">Show the cookies</button>
       </div> -->
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+
     <script>
       const firstname = document.querySelector("#firstname");
       const email = document.querySelector("#email");
@@ -32,34 +34,17 @@
         return d.toUTCString();
       };
 
-      const getCookie = (cookieName) => {
-        const name = cookieName + "=";
-        const decodedCookie = decodeURIComponent(document.cookie);
-        const cookies = decodedCookie.split(";");
-
-        for (let i = 0; i < cookies.length; i++) {
-          let cookie = cookies[i];
-          while (cookie.charAt(0) == " ") {
-            cookie = cookie.substring(1);
-          }
-
-          if (cookie.indexOf(name) == 0)
-            return cookie.substring(name.length, cookie.length);
-        }
-        return "";
-      };
-
-      function setCookies() {
-        document.cookie = `firstname=${firstname.value};expires=${daysD(10)}`;
-        document.cookie = `email=${email.value};expires=${daysD(10)}`;
+      const setCookiesAndShowWelcomeMessage = () => {
+        Cookies.set("firstname", firstname.value, { expires: 10 });
+        Cookies.set("email", email.value, { expires: 10 });
         showWelcomeMessageOrForm();
-      }
+      };
 
       function showCookies() {
         const p = document.createElement("p");
-        p.innerHTML = `Email: ${getCookie("email")} - Firstname: ${getCookie(
-          "firstname"
-        )}`;
+        p.innerHTML = `Email: ${Cookies.get(
+          "email"
+        )} - Firstname: ${Cookies.get("firstname")}`;
         document.body.appendChild(p);
       }
 
@@ -72,21 +57,17 @@
         form.setAttribute("class", "hidden");
       };
 
-      const deleteCookie = (name) => {
-        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
-      };
-
       const deleteCookiesAndShowForm = () => {
-        deleteCookie("firstname");
-        deleteCookie("email");
+        Cookies.remove("firstname");
+        Cookies.remove("email");
         showForm();
       };
 
       const showWelcomeMessageOrForm = () => {
-        const firstname = getCookie("firstname");
-        const email = getCookie("email");
+        const firstname = Cookies.get("firstname");
+        const email = Cookies.get("email");
 
-        if (firstname == "" || email == "") showForm();
+        if (!firstname || !email) showForm();
         else {
           hideForm();
           text.innerHTML = `
