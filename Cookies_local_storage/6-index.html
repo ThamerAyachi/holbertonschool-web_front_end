@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+  </head>
+  <body>
+    <script>
+      const availableItems = ["Shampoo", "Soap", "Sponge", "Water"];
+
+      const tag = (element) => document.createElement(element);
+
+      if (typeof Storage === "undefined") {
+        alert(
+          "Sorry, your browser does not support Web storage. Try again with a better one."
+        );
+      } else {
+        const addItemToCart = (item) => sessionStorage.setItem(item, true);
+
+        const createStore = () => {
+          const ul = tag("ul");
+          for (let item of availableItems) {
+            const li = tag("li");
+            li.innerHTML = item;
+            li.addEventListener("click", (event) => addItemToCart(item));
+            ul.appendChild(li);
+          }
+          document.body.appendChild(ul);
+        };
+
+        const displayCart = () => {
+          const itemInCart = [];
+          for (const item of availableItems) {
+            if (sessionStorage.getItem(item)) itemInCart.push(item);
+          }
+          if (itemInCart.length == 0) return;
+
+          const p = tag("p");
+          p.innerHTML = `You previously had ${itemInCart.length} items in your cart`;
+          document.body.appendChild(p);
+        };
+
+        createStore();
+        displayCart();
+      }
+    </script>
+  </body>
+</html>
